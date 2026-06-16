@@ -3,119 +3,247 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For My Favorite Person ❤️</title>
+<title>For My Love ❤️</title>
 
 <style>
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family:Arial, sans-serif;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
 
-    body{
-        height:100vh;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-        overflow:hidden;
-    }
+body{
+    background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#ffd1ff,#ffe0ac);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+    min-height:100vh;
+    overflow-x:hidden;
+}
 
-    .card{
-        text-align:center;
-        background:white;
-        padding:40px;
-        border-radius:25px;
-        box-shadow:0 10px 30px rgba(0,0,0,0.2);
-        max-width:500px;
-        animation:float 3s ease-in-out infinite;
-    }
+@keyframes bg{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 
-    h1{
-        color:#ff4d6d;
-        margin-bottom:15px;
-    }
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+    text-align:center;
+}
 
-    p{
-        font-size:18px;
-        color:#444;
-        line-height:1.6;
-    }
+.card{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    margin-top:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
 
-    button{
-        margin-top:20px;
-        padding:12px 25px;
-        border:none;
-        border-radius:30px;
-        background:#ff4d6d;
-        color:white;
-        font-size:16px;
-        cursor:pointer;
-    }
+h1{
+    color:#ff4d6d;
+    margin-bottom:20px;
+}
 
-    button:hover{
-        transform:scale(1.05);
-    }
+.typing{
+    font-size:22px;
+    color:#444;
+    min-height:80px;
+    font-weight:bold;
+}
 
-    @keyframes float{
-        0%,100%{transform:translateY(0);}
-        50%{transform:translateY(-10px);}
-    }
+.btn{
+    padding:12px 24px;
+    border:none;
+    border-radius:50px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    margin:10px;
+    font-size:16px;
+}
 
-    .heart{
-        position:absolute;
-        color:red;
-        animation:fall linear infinite;
-    }
+.btn:hover{
+    transform:scale(1.05);
+}
 
-    @keyframes fall{
-        from{
-            transform:translateY(-100px);
-        }
-        to{
-            transform:translateY(110vh);
-        }
+.note{
+    background:#fff0f3;
+    margin:15px;
+    padding:15px;
+    border-radius:15px;
+}
+
+.counter{
+    font-size:25px;
+    color:#ff4d6d;
+    margin-top:15px;
+}
+
+.heart{
+    position:fixed;
+    top:-20px;
+    animation:fall linear forwards;
+    z-index:-1;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
     }
+}
+
+.hidden{
+    display:none;
+}
+
+#surpriseText{
+    margin-top:20px;
+    font-size:24px;
+    color:#ff4d6d;
+    font-weight:bold;
+}
 </style>
 </head>
+
 <body>
 
-<div class="card">
-    <h1>❤️ Hey Beautiful ❤️</h1>
-    <p>
-        I know you're upset right now.<br><br>
-        But I want you to remember something:
-        you mean a lot to me, and seeing you smile
-        is one of my favorite things in the world. ✨
-        <br><br>
-        No matter what happened today,
-        I'm here for you. 💕
-    </p>
+<div class="container">
 
-    <button onclick="showLove()">Click Me 💌</button>
+<div class="card">
+<h1>❤️ To My Favorite Person ❤️</h1>
+
+<div class="typing" id="typing"></div>
+
+<div class="counter">
+Together for: <span id="days"></span> days 💕
+</div>
+
+<button class="btn" onclick="showLove()">Open My Heart 💌</button>
+<button class="btn" onclick="surprise()">Surprise Me 🎁</button>
+
+<div id="surpriseText"></div>
+</div>
+
+<div class="card">
+<h2>🌹 Reasons I Love You</h2>
+
+<div class="note">❤️ Your smile can make my worst day better.</div>
+<div class="note">❤️ You make ordinary moments feel special.</div>
+<div class="note">❤️ You are stronger than you think.</div>
+<div class="note">❤️ Talking to you is my favorite part of the day.</div>
+<div class="note">❤️ The world feels better with you in it.</div>
+</div>
+
+<div class="card">
+<h2>💌 Love Notes</h2>
+
+<div class="note">
+Even when you're upset, you're still the most precious person to me.
+</div>
+
+<div class="note">
+You never need to face anything alone. I'm always on your side.
+</div>
+
+<div class="note">
+If today was difficult, let tomorrow be our fresh start.
+</div>
+
+<div class="note">
+You deserve kindness, happiness, and all the love in the world.
+</div>
+</div>
+
+<div class="card">
+<h2>✨ One Last Thing...</h2>
+
+<p style="font-size:20px;line-height:1.8;">
+No matter how many days pass,
+how many silly arguments happen,
+or how busy life gets...
+
+I will always be grateful that you are part of my life. ❤️
+</p>
+</div>
+
 </div>
 
 <script>
+
+// ====== CHANGE THIS DATE ======
+const startDate = new Date("2025-01-01");
+// ==============================
+
+const today = new Date();
+const diff = today - startDate;
+const days = Math.floor(diff/(1000*60*60*24));
+document.getElementById("days").innerText = days;
+
+const message =
+"I know you're upset right now... but I hope this little page reminds you how important you are to me ❤️";
+
+let i = 0;
+
+function typeText(){
+    if(i < message.length){
+        document.getElementById("typing").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeText,50);
+    }
+}
+typeText();
+
 function showLove(){
-    alert("You are loved, appreciated, and absolutely adorable ❤️😊");
+    alert(
+`Hey ❤️
+
+I may not always say the perfect thing,
+but I care about you more than you know.
+
+Thank you for being you.
+
+Please smile for me 😊`
+    );
+}
+
+const surprises = [
+"🌹 You are my favorite notification.",
+"❤️ You are loved more than you realize.",
+"✨ If I could choose again, I'd still choose you.",
+"🥰 You're my happy place.",
+"💕 You make life brighter."
+];
+
+function surprise(){
+    let random =
+    surprises[Math.floor(Math.random()*surprises.length)];
+
+    document.getElementById("surpriseText").innerHTML =
+    random;
 }
 
 function createHeart(){
     const heart=document.createElement("div");
-    heart.classList.add("heart");
+
+    heart.className="heart";
     heart.innerHTML="❤️";
+
     heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(Math.random()*20+15)+"px";
-    heart.style.animationDuration=(Math.random()*3+2)+"s";
+    heart.style.fontSize=(Math.random()*25+15)+"px";
+    heart.style.animationDuration=(Math.random()*5+3)+"s";
+
     document.body.appendChild(heart);
 
     setTimeout(()=>{
         heart.remove();
-    },5000);
+    },8000);
 }
 
-setInterval(createHeart,300);
+setInterval(createHeart,250);
+
 </script>
 
 </body>
